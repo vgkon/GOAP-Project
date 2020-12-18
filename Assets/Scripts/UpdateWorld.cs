@@ -25,5 +25,10 @@ public class UpdateWorld : MonoBehaviour
         {
             states.text += s.Key + ", " + s.Value + "\n";
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

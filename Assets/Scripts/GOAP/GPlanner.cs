@@ -37,7 +37,6 @@ public class GPlanner
 {
     public Queue<GAction> Plan(List<GAction> actions, Dictionary<string, int> goal, WorldStates beliefStates)
     {
-        //Debug.Log("Planning New Plan");
         List<GAction> usableActions = new List<GAction>();
         foreach(GAction a in actions)
         {
@@ -54,7 +53,6 @@ public class GPlanner
 
         if (!success)
         {
-            //Debug.Log("NO PLAN");
             return null;
         }
 
@@ -89,11 +87,6 @@ public class GPlanner
             queue.Enqueue(a);
         }
 
-        /*Debug.Log("The Plan is: ");
-        foreach(GAction a in queue)
-        {
-            Debug.Log("Q: " + a.actionName);
-        }*/
 
         return queue;
     }
