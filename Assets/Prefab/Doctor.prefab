@@ -580,7 +580,6 @@ GameObject:
   - component: {fileID: 1706945868577515307}
   - component: {fileID: 1554278842}
   - component: {fileID: 1554278843}
-  - component: {fileID: 6875827670379523691}
   - component: {fileID: 2448708197707392979}
   - component: {fileID: 5145374480017809116}
   m_Layer: 0
@@ -665,23 +664,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: []
+  runtime: 0
   curAction: {fileID: 0}
   bladderDet: 1
   bladder: 100
   energy: 100
---- !u!114 &6875827670379523691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3300799546944532708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60abdf0e869b9364d86a434869213e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisAgent: {fileID: 1554278843}
 --- !u!114 &2448708197707392979
 MonoBehaviour:
   m_ObjectHideFlags: 0

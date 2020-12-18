@@ -997,7 +997,6 @@ GameObject:
   - component: {fileID: 5977711674464648878}
   - component: {fileID: 974294773061851773}
   - component: {fileID: 4927690032682165779}
-  - component: {fileID: 5998056621045014584}
   - component: {fileID: 250093362760270449}
   - component: {fileID: 4774856900179262411}
   - component: {fileID: 7143618652499013755}
@@ -1081,19 +1080,6 @@ MonoBehaviour:
   bladderDet: 1
   bladder: 100
   energy: 100
---- !u!114 &5998056621045014584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2618188073631541129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60abdf0e869b9364d86a434869213e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisAgent: {fileID: 4927690032682165779}
 --- !u!114 &250093362760270449
 MonoBehaviour:
   m_ObjectHideFlags: 0
