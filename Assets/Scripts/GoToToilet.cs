@@ -36,7 +36,6 @@ public class GoToToilet : GAction
         FindObjectOfType<Canvas>().transform.Find("WorldStates").GetComponent<UpdateWorld>().toilets.Remove(gameObject);
         FindObjectOfType<Canvas>().transform.Find("WorldStates").GetComponent<UpdateWorld>().toilets.Add(target);
         inventory.RemoveItem(target);
-        //Debug.Break();
         GetComponent<GAgent>().Relief();
         return true;
     }

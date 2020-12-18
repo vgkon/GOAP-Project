@@ -9,7 +9,6 @@ public class GetTreated : GAction
         target = inventory.FindItemWithTag("Cubicle");
         if(target == null)
         {
-            //print("Patient(GetTreated): Couldn't find Cubicle: null Cubicle");
             return false;
         }
         beliefs.ModifyState("treatable", -1);

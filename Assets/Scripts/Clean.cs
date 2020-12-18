@@ -13,8 +13,6 @@ public class Clean : GAction
             print(name + ": No toilet found: RemoveToilet() returned null");
             return false;
         }
-        //print(target.transform.position);
-        //print(target.name);
         inventory.AddItem(target);
         return true;
     }
@@ -23,7 +21,6 @@ public class Clean : GAction
     {
         inventory.RemoveItem(target);
         Destroy(target);
-        //Debug.Break();
         return true;
     }
 }

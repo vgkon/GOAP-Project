@@ -5,7 +5,6 @@ using UnityEngine;
 public class Doctor : GAgent
 {
     public float energy = 100f;
-    //public float bladder = 100f;
     SubGoal s1, s2, s3;
 
     new void Start()
@@ -19,7 +18,6 @@ public class Doctor : GAgent
         goals.Add(s3, 4);
 
         Invoke("Exhaustion", Random.Range(0, 2));
-        //Invoke("BladderStrain", Random.Range(0, 1));
     }
 
     private void Exhaustion()
@@ -47,25 +45,5 @@ public class Doctor : GAgent
         beliefs.ModifyState("exhausted", -1);
         goals[s2] = 1;
     }
-    /*
-    private void BladderStrain()
-    {
-        bladder -= 1f;
-        Invoke("BladderStrain", Random.Range(2, 10));
-        if (bladder <= 0)
-        {
-            beliefs.ModifyState("needsToGo", 1);
-            goals[s3] = 100;
-        }
-    }
-
-
-    public void Relief()
-    {
-        bladder = 100;
-        beliefs.ModifyState("needsToGo", -1);
-        goals[s3] = 2;
-    }
-    */
 
 }

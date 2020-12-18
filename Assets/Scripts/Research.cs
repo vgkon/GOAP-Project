@@ -7,7 +7,6 @@ public class Research : GAction
     public float exhaustion = 10;
     public override bool PrePerform()
     {
-        //print("Starting Research");
         target = GWorld.Instance.GetQueue("offices").RemoveResource();
         if (target == null)
         {
@@ -20,7 +19,6 @@ public class Research : GAction
 
     public override bool PostPerform()
     {
-        //print("Research Finished");
         GWorld.Instance.GetQueue("offices").AddResource(target);
         inventory.RemoveItem(target);
 

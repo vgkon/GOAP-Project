@@ -72,10 +72,8 @@ public class GAgent : MonoBehaviour
         if(curAction != null && curAction.running)
         {
             float dist = Vector3.Distance(transform.position, destination);
-            //print("curAction.agent.hasPath = " + curAction.agent.hasPath);
             if(curAction.target.transform.position + curAction.GetOffset() != destination)
             {
-                //print(name + " updating position");
                 destination = curAction.target.transform.position + curAction.GetOffset();
             }
             if (dist <= 2f)
@@ -87,27 +85,16 @@ public class GAgent : MonoBehaviour
                 }
             }
             return;
-            /*if(curAction.agent.hasPath && curAction.agent.remainingDistance < 1f)
-            {
-                if (!invoked)
-                {
-                    Invoke("CompleteAction", curAction.duration);
-                    invoked = true;
-                }
-            }
-            return;*/
         }
 
         if(planner == null || actionQueue == null)
         {
-            //print(name + ": New Planner");
             planner = new GPlanner();
 
             var sortedGoals = from entry in goals orderby entry.Value descending select entry;
 
             foreach (KeyValuePair<SubGoal, int> sg in sortedGoals)
             {
-                //print(name + ": Planning begins");
                 actionQueue = planner.Plan(actions, sg.Key.sGoals, beliefs);
                 if(actionQueue != null)
                 {
@@ -121,10 +108,6 @@ public class GAgent : MonoBehaviour
         {
             if (curGoal != null && curGoal.remove)
             {
-                foreach(KeyValuePair<string, int> g in curGoal.sGoals)
-                {
-                    //print(name + ": Removing goal: " + g.Key);
-                }
                 goals.Remove(curGoal);
                 curGoal = null;
             }
@@ -158,7 +141,6 @@ public class GAgent : MonoBehaviour
             else
             {
                 actionQueue = null;
-                //print(name + ": Null actionQueue");
             }
         }
     }

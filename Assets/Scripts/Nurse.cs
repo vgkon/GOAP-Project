@@ -74,23 +74,6 @@ public class Nurse : GAgent
             runtime = 0;
         }
     }
-    /*
-    private void BladderStrain()
-    {
-        bladder -= 1f;
-        Invoke("BladderStrain", Random.Range(2, 10));
-        if (bladder <= 0)
-        {
-            beliefs.ModifyState("needsToGo", 1);
-            goals[s3] = 100;
-        }
-    }
-    public void Relief()
-    {
-        bladder = 100;
-        beliefs.ModifyState("needsToGo", -1);
-        goals[s3] = 2;
-    }*/
 
 
 }

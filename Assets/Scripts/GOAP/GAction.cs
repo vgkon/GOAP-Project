@@ -25,12 +25,6 @@ public abstract class GAction : MonoBehaviour
 
     public bool running = false;
 
-    /*public GAction()
-    {
-        preconditions = new Dictionary<string, int>();
-        effects = new Dictionary<string, int>();
-    }
-    */
 
     private void Awake()
     {
@@ -64,23 +58,14 @@ public abstract class GAction : MonoBehaviour
 
     public bool isAchievableGiven(Dictionary<string, int> conditions)
     {
-        /*print("Action " + actionName);
-
-        foreach (KeyValuePair<string, int> c in conditions)
-        {
-            print("Condition : Key : " + c.Key + " Value :" + c.Value);
-        }*/
 
         foreach (KeyValuePair<string, int> p in preconditions)
         {
-            //print("Precondition : Key : " + p.Key + " Value :" + p.Value);
             if (!conditions.ContainsKey(p.Key))
             {
-                //print("Precondition : " + p.Key + " not met");
                 return false;
             }
         }
-        //Debug.Break();
         return true;
     }
 

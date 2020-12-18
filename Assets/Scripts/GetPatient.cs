@@ -7,18 +7,6 @@ public class GetPatient : GAction
     GameObject resource;
     public override bool PrePerform()
     {
-        //print("PrePerform GetPatient");
-        /*do
-        {
-            target = GWorld.Instance.RemovePatient();
-            if (target == null)
-            {
-                print("Nurse(GetPatient): Couldn't get patient: Null patient");
-                return false;
-            }
-            
-        } while (target.GetComponent<Patient>().beliefs.HasState("atToilet"));
-        */
 
         target = GWorld.Instance.GetQueue("patients").RemoveResource();
         if (target == null )
@@ -52,11 +40,6 @@ public class GetPatient : GAction
 
     public override bool PostPerform()
     {
-        /*if(!target.GetComponent<Patient>().beliefs.HasState("readyForTreatment"))
-        {
-            print("Waiting for patient");
-            return false;
-        }*/
         if(target != null)
         {
             target.GetComponent<GAgent>().inventory.AddItem(resource);

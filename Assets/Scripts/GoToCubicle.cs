@@ -23,7 +23,6 @@ public class GoToCubicle : GAction
         GWorld.Instance.GetQueue("cubicles").AddResource(target);
         inventory.RemoveItem(target);
         GetComponent<Nurse>().Exhaustion(exhaustion);
-        //target = null;
         return true;
     }
 }
