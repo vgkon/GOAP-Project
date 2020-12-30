@@ -72,10 +72,10 @@ public class GAgent : MonoBehaviour
         if(curAction != null && curAction.running)
         {
             float dist = Vector3.Distance(transform.position, destination);
-            if(curAction.target.transform.position + curAction.GetOffset() != destination)
+            /*if(curAction.target != null && curAction.target.transform.position + curAction.GetOffset() != destination)
             {
                 destination = curAction.target.transform.position + curAction.GetOffset();
-            }
+            }*/
             if (dist <= 2f)
             {
                 if (!invoked)
