@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 
 public class ResourceQueue
@@ -41,11 +40,6 @@ public class ResourceQueue
         if (que.Count == 0) return null;
         GWorld.Instance.GetWorld().ModifyState(modState, -1);
         return que.Dequeue();
-    }
-    public void RemoveResource(GameObject r)
-    {
-        que = new Queue<GameObject>(que.Where(p => p != r));
-        GWorld.Instance.GetWorld().ModifyState(modState, -1);
     }
 }
 
