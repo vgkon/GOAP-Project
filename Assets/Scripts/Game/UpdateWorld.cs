@@ -30,10 +30,5 @@ public class UpdateWorld : MonoBehaviour
         {
             Application.Quit();
         }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Time.timeScale = (Time.timeScale == 0) ? 1 : 0;
-        }
     }
 }
