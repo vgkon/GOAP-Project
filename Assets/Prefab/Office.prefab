@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902488482324367822}
+  - component: {fileID: 507785954226436553}
+  - component: {fileID: 6599229059375782513}
   m_Layer: 0
   m_Name: Office
   m_TagString: Office
@@ -35,6 +37,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507785954226436553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902488482324367821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94caa949f3a6bf4d992bf0ae107068e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 11400000, guid: 11b2b6a3278d9db44b90925edf9c708d, type: 2}
+--- !u!65 &6599229059375782513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902488482324367821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.082669, y: 5.3850107, z: 11.985594}
+  m_Center: {x: 1.410329, y: 2.931031, z: -0.6923621}
 --- !u!1001 &1902488480735783559
 PrefabInstance:
   m_ObjectHideFlags: 0

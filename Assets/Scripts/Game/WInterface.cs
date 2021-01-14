@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class WInterface : MonoBehaviour
 {
     GameObject focusObj;
-    public GameObject newResourcePrefab;
+    ResourceData foData;
+    GameObject newResourcePrefab;
+    public GameObject[] allResources;
     Vector3 goalPos;
     public NavMeshSurface surface;
     public GameObject hospital;
@@ -25,6 +27,16 @@ public class WInterface : MonoBehaviour
         deleteResource = true;
     }
 
+    public void ActivateToilet()
+    {
+        newResourcePrefab = allResources[0];
+    }
+
+    public void ActivateCubicle()
+    {
+        newResourcePrefab = allResources[1];
+    }
+
     public void MouseOffHoverTrash()
     {
         deleteResource = false;
@@ -41,31 +53,35 @@ public class WInterface : MonoBehaviour
             {
                 return;
             }
-            
-            if(hit.transform.gameObject.tag == "Toilet")
+
+            Resource r = hit.transform.gameObject.GetComponent<Resource>();
+
+            if(r != null)
             {
                 focusObj = hit.transform.gameObject;
+                foData = r.info;
             }
-            else 
+            else if(newResourcePrefab != null)
             {
                 goalPos = hit.point;
                 focusObj = Instantiate(newResourcePrefab, goalPos, newResourcePrefab.transform.rotation);
+                foData = focusObj.GetComponent<Resource>().info;
             }
 
-            focusObj.GetComponent<Collider>().enabled = false;
+            if(focusObj) focusObj.GetComponent<Collider>().enabled = false;
             
         }
         else if (focusObj && Input.GetMouseButtonUp(0))
         {
             if (deleteResource)
             {
-                GWorld.Instance.GetQueue("toilets").RemoveResource(focusObj);
+                GWorld.Instance.GetQueue(foData.resourceQueue).RemoveResource(focusObj);
                 Destroy(focusObj);
             }
             else
             {
                 focusObj.transform.parent = hospital.transform;
-                GWorld.Instance.GetQueue("toilets").AddResource(focusObj);
+                GWorld.Instance.GetQueue(foData.resourceQueue).AddResource(focusObj);
 
                 focusObj.GetComponent<Collider>().enabled = true;
             }
@@ -79,10 +95,12 @@ public class WInterface : MonoBehaviour
         }
         else if (focusObj && Input.GetMouseButton(0))
         {
+            int layerMask = 1 << 8;
             RaycastHit hitMove;
             Ray rayMove = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (!Physics.Raycast(rayMove, out hitMove))
+            if (!Physics.Raycast(rayMove, out hitMove, Mathf.Infinity, layerMask))
             {
+                print("whaaat");
                 return;
             }
 
